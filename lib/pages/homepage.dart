@@ -1,3 +1,4 @@
+import 'package:first_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget
@@ -22,7 +23,7 @@ class Homepage extends StatelessWidget
             ),
           ),
         ),
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
