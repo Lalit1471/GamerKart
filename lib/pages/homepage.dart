@@ -1,4 +1,6 @@
+import 'package:first_app/models/catalog.dart';
 import 'package:first_app/widgets/drawer.dart';
+import 'package:first_app/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget
@@ -8,19 +10,18 @@ class Homepage extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-
-    const String name = 'Lalit';
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Catalog App'),
         backgroundColor: Colors.indigoAccent,
       ),
-        body: Material(
-          child: Center(
-            child: Container(
-              child: const Text('Hello $name'),
-            ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView.builder(
+            itemBuilder: (context, index){
+              return ItemWidget(item: CatalogModel.items[index]);
+            },
+            itemCount: CatalogModel.items.length,
           ),
         ),
       drawer: const MyDrawer(),
